@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -13,12 +17,7 @@
     <link href="bootstrap-5.0.2-dist\css\bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
 
-    <style>
-        .container
-        {
-            margin: auto;
-        }
-    </style>
+    <link href="dashboard-style.css" rel="stylesheet2">
 
 </head>
 
@@ -26,7 +25,7 @@
     <header>
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <div class="container-fluid">
+            <div class="container-fluid" style="">
                 <a class="navbar-brand" style="color: gold" href="index.html">
                     ProViso
                 </a>
@@ -90,20 +89,8 @@
     <main>
         <div class="row">
             <!-- Tool Bar -->
-            <div class="col-md-2 bg-light">
-                <div class="container" style="padding: 0px; padding-left: 10px; padding-right: 10px; padding-top: 10px;">
-                    <select class="form-select" name="A" id="A" required>
-                        <option value="">
-                            Select
-                        </option>
-                        <option value="A">
-                            A
-                        </option>
-                        <option value="B">
-                            B
-                        </option>
-                    </select>
-
+            <div class="col-md-1 bg-light">
+                <div class="container" style="padding: 0px; padding-left: 10px;">
                     <select class="form-select" name="A" id="A" required>
                         <option value="">
                             Select
@@ -120,7 +107,7 @@
             <!-- Tool Bar -->
 
             <!-- Advising Container -->
-            <div class="col-md-9">
+            <div class="col-md-11">
                 <div class="container bg-light">
                     <!-- Tabs navs -->
                     <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
