@@ -16,16 +16,43 @@
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-5.0.2-dist\css\bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 
-    <link href="dashboard-style.css" rel="stylesheet2">
+    <style>
+        .container {
+            margin: auto;
+        }
 
+        .row {
+            display: flex;
+            /* equal height of the children */
+        }
+
+        .col {
+            padding: 1em;
+            border: solid;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url(img/DashboardBackground.jpg);
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 
-<body style="background-color: goldenrod;">
+<body class="bg">
     <header>
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <div class="container-fluid" style="">
+            <div class="container-fluid">
                 <a class="navbar-brand" style="color: gold" href="index.html">
                     ProViso
                 </a>
@@ -89,9 +116,12 @@
     <main>
         <div class="row">
             <!-- Tool Bar -->
-            <div class="col-md-1 bg-light">
-                <div class="container" style="padding: 0px; padding-left: 10px;">
-                    <select class="form-select" name="A" id="A" required>
+            <div class="col-md-2 bg-dark">
+                <div class="container" style="margin-top: 20px;">
+                    <label class="form-label" for="MajS" style="color: white">
+                        Choose Major
+                    </label>
+                    <select class="form-select" name="Major-Selector" id="MajS" required>
                         <option value="">
                             Select
                         </option>
@@ -103,46 +133,131 @@
                         </option>
                     </select>
                 </div>
+
+                <div class="container" style="margin-top: 20px;">
+                    <label class="form-label" for="LocS" style="color: white">
+                        Choose Location
+                    </label>
+                    <select class="form-select" name="Location-Selector" id="LocS" required>
+                        <option value="">
+                            Select
+                        </option>
+                        <option value="A">
+                            A
+                        </option>
+                        <option value="B">
+                            B
+                        </option>
+                    </select>
+                </div>
+
+                <div class="container" style="margin-top: 20px">
+                    <label class="form-label" for="BugSlide" style="color: white">
+                        Choose Budget
+                    </label>
+                    <div class="range">
+                        <input id="BugSlide" type="range" class="form-range" min="0" max="1000" step="1">
+                    </div>
+                </div>
             </div>
             <!-- Tool Bar -->
+            <!-- Choose Classes -->
+            <div class="col-md-10">
+                <div class="container bg-dark" style="height: 100%;">
+                    <div class="container">
+                        <label class="form-label" for="claS1" style="color: white">
+                            Choose Classes
+                        </label>
+                        <select class="form-select" name="Class-Selector" id="claS1" required>
+                            <option value="">
+                                Select
+                            </option>
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                        </select>
+                    </div>
 
+                    <div class="container" style="margin-top: 10px;">
+                        <select class="form-select" name="Class-Selector" id="claS2" required>
+                            <option value="">
+                                Select
+                            </option>
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="container" style="margin-top: 10px;">
+                        <select class="form-select" name="Class-Selector" id="claS3" required>
+                            <option value="">
+                                Select
+                            </option>
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="container" style="margin-top: 10px;">
+                        <select class="form-select" name="Class-Selector" id="claS4" required>
+                            <option value="">
+                                Select
+                            </option>
+                            <option value="A">
+                                A
+                            </option>
+                            <option value="B">
+                                B
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Choose Classes end -->
             <!-- Advising Container -->
-            <div class="col-md-11">
-                <div class="container bg-light">
+            <div class="col-md-12">
+                <div class="container bg-dark" style="height: 600px; width: 80%; margin: auto; margin-top: 20px;">
                     <!-- Tabs navs -->
-                    <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1" role="tab" aria-controls="ex1-tabs-1" aria-selected="true">
-                                Tab 1
-                            </a>
+                            <button class="nav-link active" id="class-tab" data-bs-toggle="tab"
+                                data-bs-target="#classes" type="button" role="tab" aria-controls="classes"
+                                aria-selected="true">
+                                Classes
+                            </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab" aria-controls="ex1-tabs-2" aria-selected="false">
-                                Tab 2
-                            </a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="ex1-tab-3" data-mdb-toggle="tab" href="#ex1-tabs-3" role="tab" aria-controls="ex1-tabs-3" aria-selected="false">
-                                Tab 3
-                            </a>
+                            <button class="nav-link" id="graph-tab" data-bs-toggle="tab" data-bs-target="#graphs"
+                                type="button" role="tab" aria-controls="graphs" aria-selected="false">
+                                Graphs
+                            </button>
                         </li>
                     </ul>
-                    <!-- Tabs navs -->
-
-                    <!-- Tabs content -->
-                    <div class="tab-content" id="ex1-content">
-                        <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
-                            Tab 1 content
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="classes" role="tabpanel" aria-labelledby="class-tab">
+                            <p style="color: white">
+                                Class Content
+                            </p>
                         </div>
-                        <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-                            Tab 2 content
-                        </div>
-                        <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-                            Tab 3 content
+                        <div class="tab-pane fade" id="graphs" role="tabpanel" aria-labelledby="graph-tab">
+                            <p style="color: white">
+                                Graph Content
+                            </p>
                         </div>
                     </div>
-                    <!-- Tabs content -->
                 </div>
+                <!-- Tabs navs -->
             </div>
         </div>
     </main>
