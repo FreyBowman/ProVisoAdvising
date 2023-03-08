@@ -1,4 +1,26 @@
-.container
-{
+.container {
     margin: auto;
+}
+
+.row {
+    display: flex;
+    /* equal height of the children */
+}
+
+.col {
+    padding: 1em;
+    border: solid;
+}
+
+.bg-image {
+      /* The image used */
+  background-image: url(img/DashboardBackground.jpg);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
