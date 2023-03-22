@@ -229,15 +229,28 @@
                             <div class="row">
                                 <div class="col-md-10 mb-3">
                                     <select class="form-select" name="Class-Selector" id="claS1" required>
-                                        <option value="">
-                                            Select
-                                        </option>
-                                        <option value="A">
-                                            A
-                                        </option>
-                                        <option value="B">
-                                            B
-                                        </option>
+                                        <?php
+                                            $servername = "localhost";
+                                            $username = "root";
+                                            $password = "";
+                                            $dbname = "ProViso";
+
+                                            // Create Connection
+                                            $con = mysqli_connect($servername, $username, $password, $dbname);
+
+                                            // Check connection
+                                            if (!$con) {
+                                                trigger_error("Connection failed: " . mysqli_connect_error());
+                                            }
+                                            //Run Query
+                                            $stmt = "SELECT DISTINCT `Class_Name` FROM `Classes` WHERE 1";
+                                            $result = mysqli_query($con, $stmt) or die(mysqli_error($con));
+                                            while (list($category) = mysqli_fetch_row($result)) {
+                                                echo '<option value="' . $category . '">' . $category . '</option>';
+                                            }
+
+                                            mysqli_close($con);
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-md-2 mb-3">
