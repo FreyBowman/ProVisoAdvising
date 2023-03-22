@@ -168,60 +168,34 @@
                         <label class="form-label" for="claS1" style="color: white">
                             Choose Classes
                         </label>
-                        <select class="form-select" name="Class-Selector" id="claS1" required>
-                            <option value="">
-                                Select
-                            </option>
-                            <option value="A">
-                                A
-                            </option>
-                            <option value="B">
-                                B
-                            </option>
-                        </select>
                     </div>
-
-                    <div class="container" style="margin-top: 10px;">
-                        <select class="form-select" name="Class-Selector" id="claS2" required>
-                            <option value="">
-                                Select
-                            </option>
-                            <option value="A">
-                                A
-                            </option>
-                            <option value="B">
-                                B
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="container" style="margin-top: 10px;">
-                        <select class="form-select" name="Class-Selector" id="claS3" required>
-                            <option value="">
-                                Select
-                            </option>
-                            <option value="A">
-                                A
-                            </option>
-                            <option value="B">
-                                B
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="container" style="margin-top: 10px;">
-                        <select class="form-select" name="Class-Selector" id="claS4" required>
-                            <option value="">
-                                Select
-                            </option>
-                            <option value="A">
-                                A
-                            </option>
-                            <option value="B">
-                                B
-                            </option>
-                        </select>
-                    </div>
+                    <form action="#" method="POST" id="query_form">
+                        <div id="show_class">
+                            <div class="row">
+                                <div class="col-md-10 mb-3">
+                                    <select class="form-select" name="Class-Selector" id="claS1" required>
+                                        <option value="">
+                                            Select
+                                        </option>
+                                        <option value="A">
+                                            A
+                                        </option>
+                                        <option value="B">
+                                            B
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                    <button class="btn btn-success add_item_btn" style="margin: auto; width: 70%;">
+                                        Add Class
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit" value="Search" class="btn btn-primary w-25" id="search_btn">
+                        </div>
+                    </form>
                 </div>
             </div>
             <!-- Choose Classes end -->
@@ -261,6 +235,49 @@
             </div>
         </div>
     </main>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            $(".add_item_btn").click(function (e) {
+                e.preventDefault();
+                $("#show_class").prepend(`
+                    <div class="row">
+                        <div class="col-md-10 mb-3">
+                            <select class="form-select" name="Class-Selector" id="claS1" required>
+                                <option value="">
+                                    Select
+                                </option>
+                                <option value="A">
+                                    A
+                                </option>
+                                <option value="B">
+                                    B
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <button class="btn btn-danger remove_item_btn"  style="margin: auto; width: 70%;">
+                                Remove Class
+                            </button>
+                        </div>
+                    </div>
+                `);
+            });
+
+            $(document).on('click', '.remove_item_btn', function (e) {
+                let row_item = $(this).parent().parent();
+                $(row_item).remove();
+            });
+
+            // ajax request to query all form data
+            $("#query_form").submit(function(e){
+                $("search_btn").val('Searching...');
+                $.ajax({
+                    //Query request
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
