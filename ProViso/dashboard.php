@@ -45,6 +45,35 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        .range-wrap {
+            position: relative;
+            margin: 0 auto 3rem;
+        }
+
+        .range {
+            width: 100%;
+        }
+
+        .bubble {
+            background: red;
+            color: white;
+            padding: 4px 12px;
+            position: absolute;
+            border-radius: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bubble::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: red;
+            top: -1px;
+            left: 50%;
+        }
     </style>
 </head>
 
@@ -125,11 +154,11 @@
                         <option value="">
                             Select
                         </option>
-                        <option value="A">
-                            A
+                        <option value="Computer_Science">
+                            Computer Science
                         </option>
-                        <option value="B">
-                            B
+                        <option value="Not_Computer_Science">
+                            Other Major
                         </option>
                     </select>
                 </div>
@@ -142,24 +171,50 @@
                         <option value="">
                             Select
                         </option>
-                        <option value="A">
-                            A
+                        <option value="U_of_I">
+                            University of Idaho
                         </option>
-                        <option value="B">
-                            B
+                        <option value="Not_U_of_I">
+                            Somewhere Else
                         </option>
                     </select>
                 </div>
 
-                <div class="container" style="margin-top: 20px">
+                <div class="container" style="margin-top: 20px;">
                     <label class="form-label" for="BugSlide" style="color: white">
                         Choose Budget
                     </label>
-                    <div class="range">
-                        <input id="BugSlide" type="range" class="form-range" min="0" max="1000" step="1">
+                    <div class="range-wrap">
+                        <input id="BugSlide" type="range" class="range" min="0" max="1000" step="1">
+                        <div>
+                            <ouput class="bubble"></ouput>
+                        </div>
                     </div>
                 </div>
             </div>
+            <script>
+                const allRanges = document.querySelectorAll(".range-wrap");
+                allRanges.forEach(wrap => {
+                    const range = wrap.querySelector(".range");
+                    const bubble = wrap.querySelector(".bubble");
+
+                    range.addEventListener("input", () => {
+                        setBubble(range, bubble);
+                    });
+                    setBubble(range, bubble);
+                });
+
+                function setBubble(range, bubble) {
+                    const val = range.value;
+                    const min = range.min ? range.min : 0;
+                    const max = range.max ? range.max : 100;
+                    const newVal = Number(((val - min) * 100) / (max - min));
+                    bubble.innerHTML = val;
+
+                    // Sorta magic numbers based on size of the native UI thumb
+                    bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+                }
+            </script>
             <!-- Tool Bar -->
             <!-- Choose Classes -->
             <div class="col-md-10">
@@ -270,7 +325,7 @@
             });
 
             // ajax request to query all form data
-            $("#query_form").submit(function(e){
+            $("#query_form").submit(function (e) {
                 $("search_btn").val('Searching...');
                 $.ajax({
                     //Query request
