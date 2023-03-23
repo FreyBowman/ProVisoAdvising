@@ -159,15 +159,15 @@ if (!$con) {
         <!-- Navigation Bar -->
     </header>
     <main>
-        <!-- Tool Bar -->
         <form action="#" method="POST" id="query_form">
             <div class="row">
-                <div class="col-md-11 bg-dark" style="margin: auto">
+                <!-- Tool Bar -->
+                <div class="col-md-2 bg-dark">
                     <div class="container" style="margin-top: 20px;">
-                        <label class="form-label" for="Cars" style="color: white">
-                            Preferred Career
+                        <label class="form-label" for="MajS" style="color: white">
+                            Choose Major
                         </label>
-                        <select class="form-select" name="Major-Selector" id="Cars" required>
+                        <select class="form-select" name="Major-Selector" id="MajS" required>
                             <option value="">
                                 Select
                             </option>
@@ -175,18 +175,21 @@ if (!$con) {
                                 Computer Science
                             </option>
                             <option value="Not_Computer_Science">
-                                Other Career
+                                Other Major
                             </option>
                         </select>
                     </div>
 
                     <div class="container" style="margin-top: 20px;">
                         <label class="form-label" for="LocS" style="color: white">
-                            Preferred Location
+                            Choose Location
                         </label>
-                        <select class="form-select" id="LocS" name="locselector">
+                        <select class="form-select" id="LocS" name="locselector" required>
                             <option value="">
                                 Select
+                            </option>
+                            <option value="All">
+                                All locations
                             </option>
                             <?php
                             //Run Query
@@ -198,19 +201,17 @@ if (!$con) {
                             ?>
                         </select>
                     </div>
+
                     <div class="container" style="margin-top: 20px;">
                         <label class="form-label" for="BugSlide" style="color: white">
                             Choose Budget
                         </label>
                         <div class="range-wrap">
-                            <input id="BugSlide" type="range" class="range" min="0" max="20000" step="100">
+                            <input id="BugSlide" type="range" class="range" min="0" max="1000" step="1">
                             <div>
                                 <ouput class="bubble"></ouput>
                             </div>
                         </div>
-                    </div>
-                    <div class="container" style="margin-bottom: 5px">
-                        <input type="submit" value="Search" class="btn btn-primary w-10" id="search_btn">
                     </div>
                 </div>
                 <script>
@@ -236,9 +237,60 @@ if (!$con) {
                         bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
                     }
                 </script>
+                <!-- Tool Bar -->
+                <!-- Choose Classes -->
+                <div class="col-md-10">
+                    <div class="container bg-dark" style="height: 100%;">
+                        <div class="container">
+                            <label class="form-label" for="claS1" style="color: white">
+                                Choose Taken Classes
+                            </label>
+                        </div>
+                        <div id="show_class">
+                            <div class="row">
+                                <div class="col-md-10 mb-3">
+                                    <select class="form-select" name="Class-Selector" id="claS1" required>
+                                        <option value="">
+                                            Select
+                                        </option>
+                                        <?php
+                                        //Get Preferences
+                                        $locationname = filter_var($_POST['locselector'], FILTER_SANITIZE_STRING);
+                                        //Run Query
+                                        if ($locationname == "All") {
+                                            $stmt = $con->prepare("SELECT DISTINCT `name` FROM `classes` WHERE 1");
+                                            $stmt->execute();
+                                            $result = $stmt->get_result();
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo '<option value="' . $row[`name`] . '">' . $row['name'] . '</option>';
+                                            }
+                                        } else {
+                                            $stmt = $con->prepare("SELECT DISTINCT `name` FROM `classes` WHERE `location` = ?");
+                                            $stmt->bind_param("s", $locationname);
+                                            $stmt->execute();
+                                            $result = $stmt->get_result();
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo '<option value="' . $row[`name`] . '">' . $row['name'] . '</option>';
+                                            }
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                    <button class="btn btn-success add_item_btn" style="margin: auto; width: 70%;">
+                                        Add Class
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit" value="Search" class="btn btn-primary w-25" id="search_btn">
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
-        <!-- Tool Bar -->
+        <!-- Choose Classes end -->
         <!-- Advising Container -->
         <div class="col-md-12">
             <div class="container bg-dark" style="height: 600px; width: 80%; margin: auto; margin-top: 20px;">
