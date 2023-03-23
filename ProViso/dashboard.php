@@ -3,10 +3,7 @@
     $username = "root";
     $password = "";
     $dbname = "ProViso";
-
-    //Preference variables
-    $locationname = $_POST['locselector'];
-
+    
     // Create Connection
     $con = mysqli_connect($servername, $username, $password, $dbname);
 
