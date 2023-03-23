@@ -106,6 +106,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="ptft.php">
+                            Part-time or Full-time
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="About.html">
                             About
                         </a>
