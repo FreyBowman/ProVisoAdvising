@@ -1,15 +1,6 @@
 //correct answer is full-time
 //other answers are part-time
 
-/*var allQuestions = [
-  { /* empty!  },
-  {question: "How many children do you have?", choices: ["One", "Two", "More than two", "None"], correctAnswer: 4}, /* end question number 1 
-  {question: "Are you currently working?", choices: ["Part-time", "Full-time", "On-campus job", "None"], correctAnswer: 3}, /* end question number 2 
-  {question: "Are you paying yourself or taking loan?", choices: ["Loan", "I have support", " ", " "], correctAnswer: 2}, /* end question number 3 
-  {question: "What is your highschool GPA?", choices: ["4.0", "Lower than 3.0", "Lower than 2.0", "I don't want to answer"], correctAnswer: 1} /* end question number 4 
-];
-*/
-
 (function() {
     var questions = [{
       question: "How many children do you have?",
@@ -25,7 +16,7 @@
       correctAnswer: 1
     }, {
       question: "What is your highschool GPA?",
-      choices: ["4.0", "Lower than 3.0", "Lower than 2.0", "I don't want to answer"],
+      choices: ["4.0", "3.0 - 3.9", "2.0 - 2.9", "I don't want to answer"],
       correctAnswer: 0
     } 
     ];
