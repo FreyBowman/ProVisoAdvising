@@ -3,7 +3,6 @@
     include("auth_session.php");
 ?>
 
-<!DOCTYPE html>
 <html>
     <head>
         <title> PRO-VISO CS ADVISING</title>
