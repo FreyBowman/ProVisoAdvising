@@ -74,7 +74,7 @@
                 <input type="password" class="input-field" name="loginpassword" placeholder="PASSWORD" required>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
                 <button type="submit" class="submit-btn">Log In</button>
-                <a href="#" id="forgot-password-link">Forgot Password?</a>
+                <a href="forgotpassword.php" id="forgot-password-link">Forgot Password?</a>
                </form>
                <form id="register" class="input-group">
                 <input type="text" class="input-field" name="username" placeholder="USERNAME" required>

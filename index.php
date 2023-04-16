@@ -10,7 +10,7 @@
                 <ul>
                     <li><a href="about.html">About</a></li>
                     <li><a href="register.php">Register</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>
 
