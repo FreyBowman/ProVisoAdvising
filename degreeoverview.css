@@ -3,76 +3,150 @@
     padding: 0;
     font-family: sans-serif;
 }
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
+  /* CSS styles for the heading */
+  h1 {
+    font-weight:lighter;
+    text-decoration: underline;
+    margin: 40px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 70px;
+  }
+  h2 {
+    padding: 50px;
+    font-weight:lighter;
+    text-decoration: underline;
+    margin: 40px;
+    text-align: 80px;
+    color: white;
+    font-size: 50px;
+    display: inline-block;
+  }
+  h3 {
+    padding: 50px;
+    font-weight:lighter;
+    text-decoration: underline;
+    margin: 40px;
+    text-align: 80px;
+    color: white;
+    font-size: 50px;
+    display: inline-block;
+  }
+  
+    select {
+        font-size: 40px;
+        padding: 30px;
+        border: 1px solid #f1ebeb;
+        border-radius: 40px;
+        display: inline-block;
+      }
+  
+  .banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(https://cdn.dal.ca/faculty/computerscience/current/advising_resources/_jcr_content/contentPar/containertwocolumn/twoColumnCol1/staticimage_160780592.adaptive.full.high.jpg/1566573820769.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.logo{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 100;  
+    cursor: pointer;
+  }
+  .navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 25px;
+    position: relative;
+  }
+  .navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 25;
+  }
+  .navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+  }
+  .navbar ul li:hover::after{
+    width: 100%;
+  }
+ 
+   span{
+    background: #009688;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+   }
 
-		header {
-			background-color: #1E90FF;
-			color: #fff;
-			padding: 20px;
-			text-align: center;
-		}
+.card {
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
 
-		h1 {
-			font-size: 36px;
-			margin: 0;
-		}
+.card-header {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  
+}
 
-		h2 {
-			font-size: 24px;
-			margin: 20px 0 10px 0;
-		}
+.card-body {
+  padding: 10px;
+}
 
-		p {
-			font-size: 16px;
-			line-height: 1.5;
-			margin-bottom: 20px;
-		}
+.card-footer {
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+}
 
-		.container {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 20px;
-		}
+.form-control {
+  margin-bottom: 20px;
+}
 
-		.row {
-			display: flex;
-			flex-wrap: wrap;
-			margin: 20px 0;
-		}
+.submit-btn {
+  color: #0b0808;
+  background-color: #f2f5f9;
+  border-color: #e7e9ec;
+  border-radius: 20px;
+  padding: 20px 40px;
+  font-size: 20px;
+  cursor: pointer;
+  width: auto;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
-		.col {
-			flex: 1;
-			margin: 0 10px;
-		}
-
-		.col h3 {
-			font-size: 20px;
-			margin-bottom: 10px;
-		}
-
-		.col ul {
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-		}
-
-		.col li {
-			margin-bottom: 10px;
-		}
-
-		.col li:before {
-			content: '•';
-			margin-right: 10px;
-		}
-
-		footer {
-			background-color: #ddd;
-			padding: 20px;
-			text-align: center;
-		}
-
-	</style>
