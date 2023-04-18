@@ -3,6 +3,6 @@
     // Destroy session
     if(session_destroy()) {
         // Redirecting To Login Page
-        header("Location: register.php");
+        header("Location: index.php");
     }
 ?>
