@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION["username"]) and !isset($_SESSION["loginusername"])) {
+    if(!isset($_SESSION["email"])) {
         header("Location: register.php");
         exit();
     }

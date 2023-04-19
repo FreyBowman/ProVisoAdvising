@@ -14,11 +14,11 @@
 		$password = stripslashes($_REQUEST['loginpassword']);
 		$password = mysqli_real_escape_string($con, $password);
 		// Check user is exist in the database
-		$query    = "SELECT * FROM `users` WHERE Username='$username' AND Password='" . md5($password) . "'";
-		$result = mysqli_query($con, $query) or die(mysqli_error($con));
-		$rows = mysqli_num_rows($result);
+		$query    = "SELECT Email FROM `users` WHERE Username='$username' AND Password='" . md5($password) . "'";
+		$email = mysqli_query($con, $query) or die(mysqli_error($con));
+		$rows = mysqli_num_rows($email);
 		if ($rows == 1) {
-            $_SESSION['loginusername'] = $username;
+            $_SESSION['email'] = $email;
             // Redirect to user dashboard page
             header("Location: home.php");
         }
@@ -46,7 +46,7 @@
         $result = mysqli_query($con, $query) or die(mysqli_err($con));
         if($result)
         {
-            $_SESSION['username'] = $username;
+            $_SESSION['email'] = $email;
             // Redirect to user dashboard page
             header("Location: home.php");
         }

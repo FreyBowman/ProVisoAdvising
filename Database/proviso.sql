@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2023 at 03:32 AM
+-- Generation Time: Apr 19, 2023 at 04:34 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -68,6 +68,25 @@ INSERT INTO `contact` (`Name`, `Email`, `Phone`, `Message`, `create_datetime`) V
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `degree`
+--
+
+CREATE TABLE `degree` (
+  `Email` varchar(50) NOT NULL,
+  `Major` varchar(50) NOT NULL,
+  `Minor` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `degree`
+--
+
+INSERT INTO `degree` (`Email`, `Major`, `Minor`) VALUES
+('', 'computerscience', 'Maths');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -99,6 +118,12 @@ ALTER TABLE `classes`
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
+  ADD PRIMARY KEY (`Email`);
+
+--
+-- Indexes for table `degree`
+--
+ALTER TABLE `degree`
   ADD PRIMARY KEY (`Email`);
 
 --
