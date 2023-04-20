@@ -29,15 +29,15 @@
                     }
                     if($minor == "Physics")
                     {
-                        header("Location: home.php");
+                        header("Location: cs-major-phy-minor.html");
                     }
                     if($minor == "Accounting")
                     {
-                        header("Location: home.php");
+                        header("Location: cs-major-Acc-minor.html");
                     }
                     if($minor == "Statistics")
                     {
-                        header("Location: home.php");
+                        header("Location: cs-major-Stat-minor.html");
                     }
                     if($minor == "No-minor")
                     {
@@ -52,15 +52,15 @@
                     }
                     if($minor == "Physics")
                     {
-                        header("Location: home.php");
+                        header("Location: cseng-major-phy-minor.html");
                     }
                     if($minor == "Accounting")
                     {
-                        header("Location: home.php");
+                        header("Location: cseng-major-Acc-minor.html");
                     }
                     if($minor == "Statistics")
                     {
-                        header("Location: home.php");
+                        header("Location: cseng-major-Stat-minor.html");
                     }
                     if($minor == "No-minor")
                     {
@@ -75,15 +75,15 @@
                     }
                     if($minor == "Physics")
                     {
-                        header("Location: home.php");
+                        header("Location: cyb-major-phy-minor.html");
                     }
                     if($minor == "Accounting")
                     {
-                        header("Location: home.php");
+                        header("Location: cyb-major-Acc-minor.html");
                     }
                     if($minor == "Statistics")
                     {
-                        header("Location: home.php");
+                        header("Location: cyb-major-Acc-minor.html");
                     }
                     if($minor == "No-minor")
                     {
