@@ -9,7 +9,8 @@
 		$major = mysqli_real_escape_string($con, $major);
         $minor = stripslashes($_REQUEST['minor']);
         $minor = mysqli_real_escape_string($con, $minor);
-        $email = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
+        /*$email = $_SESSION["email"];
+        $email = session_encode();
         //Add the new data to the database
         $query = "SELECT * FROM `degree` where Email='$email'";
         $result = mysqli_query($con, $query);
@@ -104,9 +105,9 @@
         }
         else
         {
-            $query = "INSERT into `degree` (Major, Minor) Where Email='$email'
+            $mysql = "INSERT into `degree` (Major, Minor) Where Email='$email'
             VALUES('$major', '$minor')";
-            $result = mysqli_query($con, $query) or die(mysqli_error($con));
+            $result = mysqli_query($con, $mysql) or die(mysqli_error($con));
             if($result)
             {
                 header("Location: home.php");
@@ -119,6 +120,76 @@
                             Error: Major and/or Minor failed to submit
                         </p>
                     </div>";
+            }
+        }*/
+
+        if($major == "computerscience")
+        {
+            if($minor == "Maths")
+            {
+                header("Location: cs-major-math-minor.html");
+            }
+            if($minor == "Physics")
+            {
+                header("Location: cs-major-phy-minor.html");
+            }
+            if($minor == "Accounting")
+            {
+                header("Location: cs-major-Acc-minor.html");
+            }
+            if($minor == "Statistics")
+            {
+                header("Location: cs-major-Stat-minor.html");
+            }
+            if($minor == "No-minor")
+            {
+                header("Location: only-cs-major.html");
+            }
+        }
+        if($major == "computerengineering")
+        {
+            if($minor == "Maths")
+            {
+                header("Location: cseng-major-math-minor.html");
+            }
+            if($minor == "Physics")
+            {
+                header("Location: cseng-major-phy-minor.html");
+            }
+            if($minor == "Accounting")
+            {
+                header("Location: cseng-major-Acc-minor.html");
+            }
+            if($minor == "Statistics")
+            {
+                header("Location: cseng-major-Stat-minor.html");
+            }
+            if($minor == "No-minor")
+            {
+                header("Location: only-cseng-major.html");
+            }
+        }
+        if($major == "cybersecurity")
+        {
+            if($minor == "Maths")
+            {
+                header("Location: cyb-major-math-minor.html");
+            }
+            if($minor == "Physics")
+            {
+                header("Location: cyb-major-phy-minor.html");
+            }
+            if($minor == "Accounting")
+            {
+                header("Location: cyb-major-Acc-minor.html");
+            }
+            if($minor == "Statistics")
+            {
+                header("Location: cyb-major-Acc-minor.html");
+            }
+            if($minor == "No-minor")
+            {
+                header("Location: only-cyb-major.html");
             }
         }
 
