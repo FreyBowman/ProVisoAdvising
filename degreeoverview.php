@@ -18,9 +18,78 @@
         {
             $query = "INSERT into `degree` (Email, Major, Minor)
                 VALUES('$email', '$major', '$minor')";
-            $result = mysqli_query($con, $query) or die(mysqli_err($con));
+            $result = mysqli_query($con, $query) or die(mysqli_error($con));
             if($result)
             {
+                if($major == "computerscience")
+                {
+                    if($minor == "Maths")
+                    {
+                        header("Location: cs-major-math-minor.html");
+                    }
+                    if($minor == "Physics")
+                    {
+                        header("Location: home.php");
+                    }
+                    if($minor == "Accounting")
+                    {
+                        header("Location: home.php");
+                    }
+                    if($minor == "Statistics")
+                    {
+                        header("Location: home.php");
+                    }
+                    if($minor == "No-minor")
+                    {
+                        header("Location: only-cs-major.html");
+                    }
+                }
+                if($major == "computerengineering")
+                {
+                    if($minor == "Maths")
+                    {
+                        header("Location: cseng-major-math-minor.html");
+                    }
+                    if($minor == "Physics")
+                    {
+                        header("Location: home.php");
+                    }
+                    if($minor == "Accounting")
+                    {
+                        header("Location: home.php");
+                    }
+                    if($minor == "Statistics")
+                    {
+                        header("Location: home.php");
+                    }
+                    if($minor == "No-minor")
+                    {
+                        header("Location: only-cseng-major.html");
+                    }
+                }
+                if($major == "cybersecurity")
+                {
+                    if($minor == "Maths")
+                    {
+                        header("Location: cyb-major-math-minor.html");
+                    }
+                    if($minor == "Physics")
+                    {
+                        header("Location: home.php");
+                    }
+                    if($minor == "Accounting")
+                    {
+                        header("Location: home.php");
+                    }
+                    if($minor == "Statistics")
+                    {
+                        header("Location: home.php");
+                    }
+                    if($minor == "No-minor")
+                    {
+                        header("Location: only-cyb-major.html");
+                    }
+                }
                 header("Location: home.php");
             }
             else
@@ -37,7 +106,7 @@
         {
             $query = "INSERT into `degree` (Major, Minor) Where Email='$email'
             VALUES('$major', '$minor')";
-            $result = mysqli_query($con, $query) or die(mysqli_err($con));
+            $result = mysqli_query($con, $query) or die(mysqli_error($con));
             if($result)
             {
                 header("Location: home.php");

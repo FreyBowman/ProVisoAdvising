@@ -43,7 +43,7 @@
         //Add the new data to the database
         $query = "INSERT into `users` (Username, Email, Password)
             VALUES('$username', '$email', '" . md5($password) . "')";
-        $result = mysqli_query($con, $query) or die(mysqli_err($con));
+        $result = mysqli_query($con, $query) or die(mysqli_error($con));
         if($result)
         {
             $_SESSION['email'] = $email;
