@@ -166,7 +166,7 @@
             }
             if($minor == "No-minor")
             {
-                header("Location: only-cseng-major.html");
+                header("Location: only-cseng-major.php");
             }
         }
         if($major == "cybersecurity")
@@ -189,7 +189,7 @@
             }
             if($minor == "No-minor")
             {
-                header("Location: only-cyb-major.html");
+                header("Location: only-cyb-major.php");
             }
         }
 
