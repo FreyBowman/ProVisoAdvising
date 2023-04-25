@@ -28,21 +28,78 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `classes` (
-  `class_id` int(11) NOT NULL,
+  `class_id` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
   `location` varchar(50) NOT NULL,
-  `Credits` int(50) NOT NULL
+  `credits` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `classes`
 --
 
-INSERT INTO `classes` (`class_id`, `name`, `location`, `Credits`) VALUES
-(1, 'CS-100', 'Moscow', 1),
-(2, 'CS-101', 'Online', 2),
-(3, 'CS-120', 'Moscow', 2),
-(4, 'CS-121', 'Online', 3);
+INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
+('ALL', 'MATH-170', 'Moscow', 4),
+('ALL', 'MATH-175', 'Moscow', 4),
+('ALL', 'MATH-176', 'Moscow', 3),
+('ALL', 'MATH-330', 'Moscow', 3),
+('ALL', 'STAT-301', 'Moscow', 3),
+('ALL', 'ENGL-317', 'Moscow', 3),
+('ALL', 'COMM-101', 'Moscow', 3),
+('ALL', 'BIOL-115', 'Moscow', 3),
+('ALL', 'BIOL-115L', 'Moscow', 3),
+('ALL', 'PHYS-211', 'Moscow', 3),
+('ALL', 'PHYS-211L', 'Moscow', 3),
+
+('CS', 'CS-120', 'Moscow', 4),
+('CS', 'CS-121', 'Moscow', 3),
+('CS', 'CS-150', 'Moscow', 3),
+('CS', 'CS-210', 'Online', 3),
+('CS', 'CS-240', 'Moscow', 3),
+('CS', 'CS-270', 'Moscow', 3),
+('CS', 'CS-360', 'Moscow', 4),
+('CS', 'CS-383', 'Online', 4),
+('CS', 'CS-385', 'Moscow', 3),
+('CS', 'CS-395', 'Online', 3),
+('CS', 'CS-401', 'Moscow', 1),
+('CS', 'CS-445', 'Moscow', 4),
+('CS', 'CS-480', 'Moscow', 3),
+('CS', 'CS-481', 'Moscow', 3),
+
+('CE', 'ECE-101', 'Moscow', 2),
+('CE', 'ECE-210', 'Moscow', 3),
+('CE', 'ECE-211', 'Moscow', 1),
+('CE', 'ECE-212', 'Moscow', 3),
+('CE', 'ECE-213', 'Moscow', 1),
+('CE', 'ECE-240', 'Moscow', 3),
+('CE', 'ECE-241', 'Moscow', 1),
+('CE', 'ECE-292', 'Moscow', 0),
+('CE', 'ECE-310', 'Moscow', 3),
+('CE', 'ECE-311', 'Moscow', 1),
+('CE', 'ECE-340', 'Moscow', 3),
+('CE', 'ECE-341', 'Moscow', 1),
+('CE', 'ECE-350', 'Moscow', 3),
+('CE', 'ECE-351', 'Moscow', 1),
+('CE', 'ECE-440', 'Moscow', 3),
+('CE', 'ECE-482', 'Moscow', 3),
+('CE', 'ECE-483', 'Moscow', 3),
+('CE', 'ECE-491', 'Moscow', 0),
+
+('CYB', 'CYB-110', 'Moscow', 3),
+('CYB', 'CYB-210', 'Moscow', 3),
+('CYB', 'CYB-220', 'Moscow', 3),
+('CYB', 'CYB-310', 'Moscow', 3),
+('CYB', 'CYB-330', 'Moscow', 3),
+('CYB', 'CYB-340', 'Moscow', 3),
+('CYB', 'CYB-350', 'Moscow', 3),
+('CYB', 'CYB-380', 'Moscow', 3),
+('CYB', 'CYB-381', 'Moscow', 3),
+('CYB', 'CYB-401', 'Moscow', 1),
+('CYB', 'CYB-420', 'Moscow', 3),
+('CYB', 'CYB-440', 'Moscow', 3),
+('CYB', 'CYB-480', 'Moscow', 3),
+('CYB', 'CYB-481', 'Moscow', 3)
+;
 
 -- --------------------------------------------------------
 

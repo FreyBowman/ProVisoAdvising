@@ -143,7 +143,7 @@
             }
             if($minor == "No-minor")
             {
-                header("Location: only-cs-major.html");
+                header("Location: only-cs-major.php");
             }
         }
         if($major == "computerengineering")
