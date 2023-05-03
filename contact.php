@@ -34,8 +34,8 @@
     <div class="hero">
         <div>
             <ul>
-                <li><a href="dashboard.html">Home</a></li>
-                <li><a href="logout.html">Logout</a></li>
+                <li><a href="dashboard.php">Home</a></li>
+                <li><a href="logout.php">Logout</a></li>
               </ul>
         </div>
        <form>
