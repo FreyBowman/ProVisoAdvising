@@ -14,7 +14,7 @@
                 <img src="https://proviso.ca/wp-content/uploads/2017/06/ProViso_og.jpg" class="logo">
                 <ul>
                     <li><a href="degreeoverview.php">Degree Overview</a></li>
-                    <li><a href="#">Skill Sets</a></li>
+                    <li><a href="skillset.php">Skill Sets</a></li>
                     <li><a href="#">Future Classes</a></li>
                     <li><a href="#">Scholarships</a></li>
                     <li><a href="#">Dream Jobs</a></li>

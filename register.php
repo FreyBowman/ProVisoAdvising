@@ -7,16 +7,16 @@
 	require('db.php');
 	session_start();
 	// When form submitted, check and create user session
-	if(isset($_REQUEST['loginusername']))
+	if(isset($_REQUEST['loginemail']))
 	{
-		$username = stripslashes($_REQUEST['loginusername']);    // removes backslashes
+		$email = stripslashes($_REQUEST['loginemail']);    // removes backslashes
 		$username = mysqli_real_escape_string($con, $username);
 		$password = stripslashes($_REQUEST['loginpassword']);
 		$password = mysqli_real_escape_string($con, $password);
 		// Check user is exist in the database
-		$query    = "SELECT Email FROM `users` WHERE Username='$username' AND Password='" . md5($password) . "'";
-		$email = mysqli_query($con, $query) or die(mysqli_error($con));
-		$rows = mysqli_num_rows($email);
+		$query    = "SELECT * FROM `users` WHERE Email='$email' AND Password='" . md5($password) . "'";
+		$result = mysqli_query($con, $query) or die(mysqli_error($con));
+		$rows = mysqli_num_rows($result);
 		if ($rows == 1) {
             $_SESSION['email'] = $email;
             // Redirect to user dashboard page
@@ -70,7 +70,7 @@
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
                </div>
                <form id="login" class="input-group">
-                <input type="text" class="input-field" name="loginusername" placeholder="USERNAME" required>
+                <input type="email" class="input-field" name="loginemail" placeholder="Email" required>
                 <input type="password" class="input-field" name="loginpassword" placeholder="PASSWORD" required>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
                 <button type="submit" class="submit-btn">Log In</button>
