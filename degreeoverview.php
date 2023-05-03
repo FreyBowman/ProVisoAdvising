@@ -158,11 +158,11 @@
             }
             if($minor == "Accounting")
             {
-                header("Location: cseng-major-Acc-minor.php");
+                header("Location: csengr-major-Acc-minor.php");
             }
             if($minor == "Statistics")
             {
-                header("Location: cseng-major-Stat-minor.php");
+                header("Location: csengr-major-Stat-minor.php");
             }
             if($minor == "No-minor")
             {
@@ -209,7 +209,7 @@
 					<li><a href="home.php">Home</a></li>
                     <li><a href="skillset.php">Skill Sets</a></li>
                     <li><a href="futureclass.html">Future Classes</a></li>
-                    <li><a href="scholorship.html">Scholarships</a></li>
+                    <li><a href="scholarship.html">Scholarships</a></li>
                     <li><a href="dreamjob.php">Dream Jobs</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="logout.php">Logout</a></li>
