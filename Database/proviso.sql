@@ -39,6 +39,7 @@ CREATE TABLE `classes` (
 --
 
 INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
+-- general req
 ('ALL', 'MATH-170', 'Moscow', 4),
 ('ALL', 'MATH-175', 'Moscow', 4),
 ('ALL', 'MATH-176', 'Moscow', 3),
@@ -50,7 +51,7 @@ INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
 ('ALL', 'BIOL-115L', 'Moscow', 3),
 ('ALL', 'PHYS-211', 'Moscow', 3),
 ('ALL', 'PHYS-211L', 'Moscow', 3),
-
+-- major in cs
 ('CS', 'CS-120', 'Moscow', 4),
 ('CS', 'CS-121', 'Moscow', 3),
 ('CS', 'CS-150', 'Moscow', 3),
@@ -65,7 +66,7 @@ INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
 ('CS', 'CS-445', 'Moscow', 4),
 ('CS', 'CS-480', 'Moscow', 3),
 ('CS', 'CS-481', 'Moscow', 3),
-
+-- major in ce
 ('CE', 'ECE-101', 'Moscow', 2),
 ('CE', 'ECE-210', 'Moscow', 3),
 ('CE', 'ECE-211', 'Moscow', 1),
@@ -84,7 +85,7 @@ INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
 ('CE', 'ECE-482', 'Moscow', 3),
 ('CE', 'ECE-483', 'Moscow', 3),
 ('CE', 'ECE-491', 'Moscow', 0),
-
+-- major in cyb
 ('CYB', 'CYB-110', 'Moscow', 3),
 ('CYB', 'CYB-210', 'Moscow', 3),
 ('CYB', 'CYB-220', 'Moscow', 3),
@@ -98,7 +99,36 @@ INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
 ('CYB', 'CYB-420', 'Moscow', 3),
 ('CYB', 'CYB-440', 'Moscow', 3),
 ('CYB', 'CYB-480', 'Moscow', 3),
-('CYB', 'CYB-481', 'Moscow', 3)
+('CYB', 'CYB-481', 'Moscow', 3),
+
+-- minor in math
+('M_MATH', 'MATH-170', 'Moscow', 3),
+('M_MATH', 'MATH-175', 'Moscow', 3),
+('M_MATH', 'MATH-275', 'Moscow', 3),
+('M_MATH', 'STAT-301', 'Moscow', 3),
+-- minor in phys
+('M_PHYS', 'PHYS-211', 'Moscow', 3),
+('M_PHYS', 'PHYS-211l', 'Moscow', 1),
+('M_PHYS', 'PHYS-212', 'Moscow', 3),
+('M_PHYS', 'PHYS-212L', 'Moscow', 1),
+('M_PHYS', 'PHYS-213', 'Moscow', 3),
+-- minor in acct
+('M_ACCT', 'ACCT-201', 'Moscow', 3),
+('M_ACCT', 'ACCT-202', 'Moscow', 3),
+('M_ACCT', 'ACCT-305', 'Moscow', 3),
+('M_ACCT', 'ACCT-315', 'Moscow', 3),
+('M_ACCT', 'ACCT-325', 'Moscow', 3),
+('M_ACCT', 'ACCT-385', 'Moscow', 3),
+-- minor in stat
+('M_STAT', 'STAT-251', 'Moscow', 3),
+('M_STAT', 'STAT-407', 'Moscow', 3),
+('M_STAT', 'STAT-419', 'Moscow', 3),
+('M_STAT', 'STAT-431', 'Moscow', 3),
+('M_STAT', 'MATH-160', 'Moscow', 3),
+('M_STAT', 'MATH-330', 'Moscow', 3)
+
+
+
 ;
 
 -- --------------------------------------------------------

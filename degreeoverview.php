@@ -127,19 +127,19 @@
         {
             if($minor == "Maths")
             {
-                header("Location: cs-major-math-minor.html");
+                header("Location: cs-major-math-minor.php");
             }
             if($minor == "Physics")
             {
-                header("Location: cs-major-phy-minor.html");
+                header("Location: cs-major-phy-minor.php");
             }
             if($minor == "Accounting")
             {
-                header("Location: cs-major-Acc-minor.html");
+                header("Location: cs-major-Acc-minor.php");
             }
             if($minor == "Statistics")
             {
-                header("Location: cs-major-Stat-minor.html");
+                header("Location: cs-major-Stat-minor.php");
             }
             if($minor == "No-minor")
             {
@@ -150,19 +150,19 @@
         {
             if($minor == "Maths")
             {
-                header("Location: cseng-major-math-minor.html");
+                header("Location: cseng-major-math-minor.php");
             }
             if($minor == "Physics")
             {
-                header("Location: cseng-major-phy-minor.html");
+                header("Location: cseng-major-phy-minor.php");
             }
             if($minor == "Accounting")
             {
-                header("Location: cseng-major-Acc-minor.html");
+                header("Location: cseng-major-Acc-minor.php");
             }
             if($minor == "Statistics")
             {
-                header("Location: cseng-major-Stat-minor.html");
+                header("Location: cseng-major-Stat-minor.php");
             }
             if($minor == "No-minor")
             {
@@ -173,19 +173,19 @@
         {
             if($minor == "Maths")
             {
-                header("Location: cyb-major-math-minor.html");
+                header("Location: cyb-major-math-minor.php");
             }
             if($minor == "Physics")
             {
-                header("Location: cyb-major-phy-minor.html");
+                header("Location: cyb-major-phy-minor.php");
             }
             if($minor == "Accounting")
             {
-                header("Location: cyb-major-Acc-minor.html");
+                header("Location: cyb-major-Acc-minor.php");
             }
             if($minor == "Statistics")
             {
-                header("Location: cyb-major-Acc-minor.html");
+                header("Location: cyb-major-Acc-minor.php");
             }
             if($minor == "No-minor")
             {
@@ -222,7 +222,7 @@
 	<h2>Choose Your Major:</h2>
 	<select name="major">
 	  <option value="computerscience">Bachelor's in Computer Science</option>
-	  <option value="Computerengineering">Bachelor's in Computer Engineering</option>
+	  <option value="computerengineering">Bachelor's in Computer Engineering</option>
 	  <option value="cybersecurity">Bachelor's in Cybersecurity</option>
 	</select>
 	<br>

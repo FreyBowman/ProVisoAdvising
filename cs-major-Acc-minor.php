@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Degree Overview </title>
-        <link rel="stylesheet" href="only-cyb-major.css">
+        <link rel="stylesheet" href="cs-major-Acc-minor.css">
     </head>
     <body>
         <div class="banner">
@@ -20,14 +20,14 @@
                 </ul>
             </div>
             <div class="card">
-			<h1 class="card-header"> Major:CYB Minor:None</h1>
+			<h1 class="card-header"> Major:CS Minor:Accounting</h1>
             <div class="card-body">
 	<!--h2>Freshman </h2>
 	<h2>Sophomore</h2>
     <h2>Junior</h2>
     <h2>Senior</h2-->
 
-<?php
+    <?php
 // Username is root
 $user = 'root';
 $password = '';
@@ -47,8 +47,8 @@ if ($mysqli->connect_error) {
     $mysqli->connect_error);
 }
  
-// SQL query to select data from database table classes for only cybersecurity
-$sql = " SELECT * FROM classes WHERE class_id LIKE 'CYB%' OR class_id LIKE 'ALL%' ";
+// SQL query to select data from database table classes for only cs major
+$sql = " SELECT * FROM classes WHERE class_id IN ('ALL','CS','M_ACCT') ";
 $result = $mysqli->query($sql);
 $mysqli->close();
 ?>
@@ -99,6 +99,7 @@ $mysqli->close();
             }
         ?>
     </table>
+
         </div>
     </body>
 </html>

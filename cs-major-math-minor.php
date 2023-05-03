@@ -2,15 +2,15 @@
 <html>
     <head>
         <title>Degree Overview </title>
-        <link rel="stylesheet" href="only-cyb-major.css">
+        <link rel="stylesheet" href="cs-major-math-minor.css">
     </head>
     <body>
         <div class="banner">
             <div class="navbar">
                 <img src="https://proviso.ca/wp-content/uploads/2017/06/ProViso_og.jpg" class="logo">
                 <ul>
-					<li><a href="home.html">Home</a></li>
-                    <li><a href="degreeoverview.html">Degree Overview</a></li>
+					<li><a href="home.php">Home</a></li>
+                    <li><a href="degreeoverview.php">Degree Overview</a></li>
                     <li><a href="skillset.html">Skill Sets</a></li>
                     <li><a href="futureclass.html">Future Classes</a></li>
                     <li><a href="scholorship.html">Scholarships</a></li>
@@ -20,7 +20,7 @@
                 </ul>
             </div>
             <div class="card">
-			<h1 class="card-header"> Major:CYB Minor:None</h1>
+			<h1 class="card-header"> Major:CS Minor:Math</h1>
             <div class="card-body">
 	<!--h2>Freshman </h2>
 	<h2>Sophomore</h2>
@@ -47,8 +47,8 @@ if ($mysqli->connect_error) {
     $mysqli->connect_error);
 }
  
-// SQL query to select data from database table classes for only cybersecurity
-$sql = " SELECT * FROM classes WHERE class_id LIKE 'CYB%' OR class_id LIKE 'ALL%' ";
+// SQL query to select data from database table classes for only cs major
+$sql = " SELECT * FROM classes WHERE class_id IN ('ALL','CS','M_MATH') ";
 $result = $mysqli->query($sql);
 $mysqli->close();
 ?>
@@ -99,6 +99,7 @@ $mysqli->close();
             }
         ?>
     </table>
+
         </div>
     </body>
 </html>
