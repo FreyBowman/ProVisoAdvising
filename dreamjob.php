@@ -11,13 +11,13 @@ include("auth_session.php");
     <link rel="stylesheet" href="dreamjobstyle.css">
 </head>
 
-<body>
-    <div class="banner">
+<body class="banner">
+    <div>
         <div class="navbar">
             <img src="https://proviso.ca/wp-content/uploads/2017/06/ProViso_og.jpg" class="logo">
             <ul>
                 <li><a href="home.php">Home</a></li>
-                <li><a href="skillset.html">Skill Sets</a></li>
+                <li><a href="skillset.php">Skill Sets</a></li>
                 <li><a href="futureclass.html">Future Classes</a></li>
                 <li><a href="scholorship.html">Scholarships</a></li>
                 <li><a href="dreamjob.php">Dream Jobs</a></li>

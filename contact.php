@@ -31,13 +31,22 @@
         <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
     </head>
 <body>
+    <div class="navbar">
+        <ul>
+            <?php
+                if(session_status() === 0)
+                {
+                    echo "<li><a href='index.php'>Home</a></li>";
+                }
+                else
+                {
+                    echo "<li><a href='home.php'>Home</a></li>
+                        <li><a href='logout.php'>Logout</a></li>";
+                }
+            ?>
+        </ul>
+    </div>    
     <div class="hero">
-        <div>
-            <ul>
-                <li><a href="dashboard.html">Home</a></li>
-                <li><a href="logout.html">Logout</a></li>
-              </ul>
-        </div>
        <form>
         <div class="row">
             <div class="input-group">

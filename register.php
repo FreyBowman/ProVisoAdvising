@@ -10,7 +10,7 @@
 	if(isset($_REQUEST['loginemail']))
 	{
 		$email = stripslashes($_REQUEST['loginemail']);    // removes backslashes
-		$username = mysqli_real_escape_string($con, $username);
+		$email = mysqli_real_escape_string($con, $email);
 		$password = stripslashes($_REQUEST['loginpassword']);
 		$password = mysqli_real_escape_string($con, $password);
 		// Check user is exist in the database
@@ -40,10 +40,23 @@
         $email = mysqli_real_escape_string($con, $email);
 		$password = stripslashes($_REQUEST['password']);
 		$password = mysqli_real_escape_string($con, $password);
-        //Add the new data to the database
-        $query = "INSERT into `users` (Username, Email, Password)
-            VALUES('$username', '$email', '" . md5($password) . "')";
-        $result = mysqli_query($con, $query) or die(mysqli_error($con));
+
+        $query = "SELECT * FROM `users` WHERE Email = '$email'";
+        $sql = mysqli_query($con, $query) or die(mysqli_error($con));
+        $result = false;
+
+        if($sql)
+        {
+            //Do Nothing
+        }
+        else
+        {
+            //Add the new data to the database
+            $query = "INSERT into `users` (Username, Email, Password)
+                VALUES('$username', '$email', '" . md5($password) . "')";
+            $result = mysqli_query($con, $query) or die(mysqli_error($con));
+        }
+
         if($result)
         {
             $_SESSION['email'] = $email;
@@ -52,12 +65,7 @@
         }
         else
         {
-            echo 
-                "<div>
-                    <p>
-                        Registration Failed.
-                    </p>
-                </div>";
+            echo "<script>alert('Registration Failed');</script>";
         }
     }
 
