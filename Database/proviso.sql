@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2023 at 04:34 AM
+-- Generation Time: May 03, 2023 at 06:20 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -39,7 +39,6 @@ CREATE TABLE `classes` (
 --
 
 INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
--- general req
 ('ALL', 'MATH-170', 'Moscow', 4),
 ('ALL', 'MATH-175', 'Moscow', 4),
 ('ALL', 'MATH-176', 'Moscow', 3),
@@ -51,7 +50,6 @@ INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
 ('ALL', 'BIOL-115L', 'Moscow', 3),
 ('ALL', 'PHYS-211', 'Moscow', 3),
 ('ALL', 'PHYS-211L', 'Moscow', 3),
--- major in cs
 ('CS', 'CS-120', 'Moscow', 4),
 ('CS', 'CS-121', 'Moscow', 3),
 ('CS', 'CS-150', 'Moscow', 3),
@@ -66,7 +64,6 @@ INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
 ('CS', 'CS-445', 'Moscow', 4),
 ('CS', 'CS-480', 'Moscow', 3),
 ('CS', 'CS-481', 'Moscow', 3),
--- major in ce
 ('CE', 'ECE-101', 'Moscow', 2),
 ('CE', 'ECE-210', 'Moscow', 3),
 ('CE', 'ECE-211', 'Moscow', 1),
@@ -85,7 +82,6 @@ INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
 ('CE', 'ECE-482', 'Moscow', 3),
 ('CE', 'ECE-483', 'Moscow', 3),
 ('CE', 'ECE-491', 'Moscow', 0),
--- major in cyb
 ('CYB', 'CYB-110', 'Moscow', 3),
 ('CYB', 'CYB-210', 'Moscow', 3),
 ('CYB', 'CYB-220', 'Moscow', 3),
@@ -100,36 +96,27 @@ INSERT INTO `classes` (`class_id`, `name`, `location`, `credits`) VALUES
 ('CYB', 'CYB-440', 'Moscow', 3),
 ('CYB', 'CYB-480', 'Moscow', 3),
 ('CYB', 'CYB-481', 'Moscow', 3),
-
--- minor in math
 ('M_MATH', 'MATH-170', 'Moscow', 3),
 ('M_MATH', 'MATH-175', 'Moscow', 3),
 ('M_MATH', 'MATH-275', 'Moscow', 3),
 ('M_MATH', 'STAT-301', 'Moscow', 3),
--- minor in phys
 ('M_PHYS', 'PHYS-211', 'Moscow', 3),
 ('M_PHYS', 'PHYS-211l', 'Moscow', 1),
 ('M_PHYS', 'PHYS-212', 'Moscow', 3),
 ('M_PHYS', 'PHYS-212L', 'Moscow', 1),
 ('M_PHYS', 'PHYS-213', 'Moscow', 3),
--- minor in acct
 ('M_ACCT', 'ACCT-201', 'Moscow', 3),
 ('M_ACCT', 'ACCT-202', 'Moscow', 3),
 ('M_ACCT', 'ACCT-305', 'Moscow', 3),
 ('M_ACCT', 'ACCT-315', 'Moscow', 3),
 ('M_ACCT', 'ACCT-325', 'Moscow', 3),
 ('M_ACCT', 'ACCT-385', 'Moscow', 3),
--- minor in stat
 ('M_STAT', 'STAT-251', 'Moscow', 3),
 ('M_STAT', 'STAT-407', 'Moscow', 3),
 ('M_STAT', 'STAT-419', 'Moscow', 3),
 ('M_STAT', 'STAT-431', 'Moscow', 3),
 ('M_STAT', 'MATH-160', 'Moscow', 3),
-('M_STAT', 'MATH-330', 'Moscow', 3)
-
-
-
-;
+('M_STAT', 'MATH-330', 'Moscow', 3);
 
 -- --------------------------------------------------------
 
@@ -191,49 +178,36 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`ID`, `Username`, `Email`, `Password`) VALUES
 (3, 'fakename', 'fakeemail@gmail.com', 'b1282c1dbc170a3f4bf470b7edb080c3');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_skills`
+--
+
+CREATE TABLE `user_skills` (
+  `ID` int(50) NOT NULL,
+  `Skill` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_skills`
+--
+
+INSERT INTO `user_skills` (`ID`, `Skill`) VALUES
+(3, 'HTML'),
+(3, 'JavaScript'),
+(3, 'Networking'),
+(3, 'CSS');
+
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `classes`
---
-ALTER TABLE `classes`
-  ADD PRIMARY KEY (`class_id`);
-
---
--- Indexes for table `contact`
---
-ALTER TABLE `contact`
-  ADD PRIMARY KEY (`Email`);
-
---
--- Indexes for table `degree`
---
-ALTER TABLE `degree`
-  ADD PRIMARY KEY (`Email`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `classes`
---
-ALTER TABLE `classes`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
