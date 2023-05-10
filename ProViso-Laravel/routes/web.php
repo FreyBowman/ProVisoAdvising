@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Normal Routes
 Route::get('/', function () {
     return view('index');
 });
@@ -91,3 +94,8 @@ Route::get('/cyb-major-phy-minor', function () {
 Route::get('/cyb-major-Stat-minor', function () {
     return view('cyb-major-Stat-minor');
 });
+
+//Controller Routes
+Route::post('post-login', [LoginController::class, 'postLogin'])->name('post-login');
+Route::post('post-registration', [LoginController::class, 'postregistration'])->name('post-registration');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');

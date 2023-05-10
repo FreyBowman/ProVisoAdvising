@@ -20,7 +20,7 @@
 		if ($rows == 1) {
             $_SESSION['email'] = $email;
             // Redirect to user dashboard page
-            header("Location: /home");
+            //header("Location: /home");
         }
 		else
 		{
@@ -61,7 +61,7 @@
         {
             $_SESSION['email'] = $email;
             // Redirect to user dashboard page
-            header("Location: /home");
+            //header("Location: /home");
         }
         else
         {
@@ -77,7 +77,8 @@
                 <button type="button" class="toggle-btn" onclick="login()">Log In</button>
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
                </div>
-               <form id="login" class="input-group">
+               <form id="login" class="input-group" method="POST" action="post-login">
+               @csrf
                 <input type="email" class="input-field" name="loginemail" placeholder="Email" required>
                 <input type="password" class="input-field" name="loginpassword" placeholder="PASSWORD" required>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
