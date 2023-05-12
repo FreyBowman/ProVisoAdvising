@@ -1,0 +1,170 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* Background image */
+body {
+    background-image: url("https://www.athletadesk.com/wp-content/uploads/2016/08/join-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  /* Registration form */
+  form {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff(247, 242, 242, 0.977);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  form:hover {
+    box-shadow: 0 0 20px #fff(227, 214, 214, 0.5);
+    transform: translateY(-10px);
+  }
+  
+
+header {
+	background-color: #2312e1;
+	color: #fff;
+	padding: 16px;
+}
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 32px;
+}
+
+h2 {
+	font-size: 24px;
+	margin-bottom: 16px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+label {
+	margin-bottom: 8px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+	display: block;
+	padding: 8px;
+	font-size: 16px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	margin-bottom: 16px;
+	transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus {
+	outline: none;
+	border-color: #2196F3;
+}
+
+input[type="submit"] {
+	background-color: #2196F3;
+	color: #fff;
+	padding: 8px 16px;
+	font-size: 16px;
+	border-radius: 4px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+	background-color: #1976D2;
+}
+
+.password-strength {
+	display: flex;
+	margin-bottom: 16px;
+}
+
+.password-strength span {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin-right: 8px;
+	border-radius: 50%;
+	transition: background-color 0.3s;
+}
+
+.password-strength .weak {
+	background-color: #FF7043;
+}
+
+.password-strength .medium {
+	background-color: #FFC107;
+}
+
+.password-strength .strong {
+	background-color: #8BC34A;
+}
+
+#password {
+	padding-right: 64px;
+}
+
+#password:focus + .password-strength span {
+	background-color: #ccc;
+}
+
+#password:valid + .password-strength span.weak {
+	background-color: #FF7043;
+}
+
+#password:valid + .password-strength span.medium {
+	background-color: #FFC107;
+}
+
+#password:valid + .password-strength span.strong {
+	background-color: #8BC34A;
+}
+
+.gender-buttons {
+	display: flex;
+	margin-bottom: 16px;
+}
+
+.gender-buttons input[type="radio"] {
+	display: none;
+}
+
+.gender-buttons label {
+	display: inline-block;
+	padding: 8px 16px;
+	background-color: #ccc;
+	color: #333;
+	border-radius: 4px;
+	margin-right: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.gender-buttons input[type="radio"]:checked + label {
+	background-color: #2196F3;
+	color: #fff;
+}
+
+select {
+	padding-right: 32px;
+	background-image: url("https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-down-01-512.png");
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 4px;
+	border: 1px
+}

@@ -184,7 +184,8 @@
     </head>
     <body class="banner">
         <div>
-        <form>
+        <form method="POST" action="post-skills">
+        @csrf
             <div class="navbar">
                 <img src="https://proviso.ca/wp-content/uploads/2017/06/ProViso_og.jpg" class="logo">
                 <ul>
@@ -201,15 +202,22 @@
 			<h1 class="card-header"> Enter Skills You Are Proficient in</h1>
             <div class="card-body">
 	<h2>Choose all that Apply</h2>
-
-    <label><input type="checkbox" name="skillhtml" value="HTML">HTML</label><br>
-    <label><input type="checkbox" name="skillcss" value="CSS">CSS</label><br>
-    <label><input type="checkbox" name="skilljavascript" value="JavaScript">JavaScript</label><br>
-    <label><input type="checkbox" name="skillpython" value="Python">Python</label><br>
-    <label><input type="checkbox" name="skillc++" value="C++">C++</label><br>
-    <label><input type="checkbox" name="skillnet" value="Networking">Knowledge of Networking</label><br>
-    <label><input type="checkbox" name="skilljava" value="Java">Java</label><br>
-    <label><input type="checkbox" name="skillsql" value="SQL/NO-SQL">SQL/No SQL</label><br>
+    <input type="hidden" name="skillhtml" value="No">
+    <label><input type="checkbox" name="skillhtml" value="Yes">HTML</label><br>
+    <input type="hidden" name="skillcss" value="No">
+    <label><input type="checkbox" name="skillcss" value="Yes">CSS</label><br>
+    <input type="hidden" name="skilljavascript" value="No">
+    <label><input type="checkbox" name="skilljavascript" value="Yes">JavaScript</label><br>
+    <input type="hidden" name="skillpython" value="No">
+    <label><input type="checkbox" name="skillpython" value="Yes">Python</label><br>
+    <input type="hidden" name="skillcpp" value="No">
+    <label><input type="checkbox" name="skillcpp" value="Yes">C++</label><br>
+    <input type="hidden" name="skillnet" value="No">
+    <label><input type="checkbox" name="skillnet" value="Yes">Knowledge of Networking</label><br>
+    <input type="hidden" name="skilljava" value="No">
+    <label><input type="checkbox" name="skilljava" value="Yes">Java</label><br>
+    <input type="hidden" name="skillsql" value="No">
+    <label><input type="checkbox" name="skillsql" value="Yes">SQL/No SQL</label><br>
 
 </div>
 </div>

@@ -2,90 +2,24 @@
     <head>
         <link rel="stylesheet" href="CSS/register.css">
     </head>
-    <body>
-    <?php
-	require('db.php');
-	session_start();
-	// When form submitted, check and create user session
-	if(isset($_REQUEST['loginemail']))
-	{
-		$email = stripslashes($_REQUEST['loginemail']);    // removes backslashes
-		$email = mysqli_real_escape_string($con, $email);
-		$password = stripslashes($_REQUEST['loginpassword']);
-		$password = mysqli_real_escape_string($con, $password);
-		// Check user is exist in the database
-		$query    = "SELECT * FROM `users` WHERE Email='$email' AND Password='" . md5($password) . "'";
-		$result = mysqli_query($con, $query) or die(mysqli_error($con));
-		$rows = mysqli_num_rows($result);
-		if ($rows == 1) {
-            $_SESSION['email'] = $email;
-            // Redirect to user dashboard page
-            //header("Location: /home");
-        }
-		else
-		{
-            echo 
-				"<div>
-					<p>
-						Incorrect username and/or password.
-					</p>
-				</div>";
-		}
-	}
-    if(isset($_REQUEST['username']))
-    {
-        $username = stripslashes($_REQUEST['username']);    // removes backslashes
-		$username = mysqli_real_escape_string($con, $username);
-        $email = stripslashes($_REQUEST['email']);
-        $email = mysqli_real_escape_string($con, $email);
-		$password = stripslashes($_REQUEST['password']);
-		$password = mysqli_real_escape_string($con, $password);
-
-        $query = "SELECT * FROM `users` WHERE Email = '$email'";
-        $sql = mysqli_query($con, $query) or die(mysqli_error($con));
-        $result = false;
-
-        if($sql)
-        {
-            //Do Nothing
-        }
-        else
-        {
-            //Add the new data to the database
-            $query = "INSERT into `users` (Username, Email, Password)
-                VALUES('$username', '$email', '" . md5($password) . "')";
-            $result = mysqli_query($con, $query) or die(mysqli_error($con));
-        }
-
-        if($result)
-        {
-            $_SESSION['email'] = $email;
-            // Redirect to user dashboard page
-            //header("Location: /home");
-        }
-        else
-        {
-            echo "<script>alert('Registration Failed');</script>";
-        }
-    }
-
-?>
-        <div class="hero">
+    <body class="hero">
+        <div>
             <div class="form-box">
                <div class="button-box">
                 <div id="btn"></div>
                 <button type="button" class="toggle-btn" onclick="login()">Log In</button>
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
                </div>
-               <form id="login" class="input-group" method="POST" action="post-login">
+               <form id="login" class="input-group" method="POST" action="{{url('post-login')}}">
                @csrf
-                <input type="email" class="input-field" name="loginemail" placeholder="Email" required>
-                <input type="password" class="input-field" name="loginpassword" placeholder="PASSWORD" required>
+                <input type="email" class="input-field" name="email" placeholder="Email" required>
+                <input type="password" class="input-field" name="password" placeholder="PASSWORD" required>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
                 <button type="submit" class="submit-btn">Log In</button>
                 <a href="forgotpassword.php" id="forgot-password-link">Forgot Password?</a>
                </form>
-               <form id="register" class="input-group">
+               <form id="register" class="input-group" method="POST" action="post-registration">
+               @csrf
                 <input type="text" class="input-field" name="username" placeholder="USERNAME" required>
                 <input type="email" class="input-field" name="email" placeholder="EMAIL-ID" required>
                 <input type="password" class="input-field" name="password" placeholder="PASSWORD" required>
@@ -93,6 +27,9 @@
                 <button type="submit" name="rsubmit" class="submit-btn">Register</button>
                </form>
             </div>
+            @if($errors->any())
+                <p style="text-align: center;">{{$errors->first()}}</p>
+            @endif
                 <ul>
                     <li><a href="/index">Home</a></li>
                     <li><a href="/contact">Contact</a></li>

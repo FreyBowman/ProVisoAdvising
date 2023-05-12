@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\SkillsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ClassesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +37,7 @@ Route::get('/register', function () {
 Route::get('/forgotpassword', function () {
     return view('forgotpassword');
 });
-Route::get('/home', function () {
+Route::get('/dashboard', function () {
     return view('home');
 });
 Route::get('/degreeoverview', function () {
@@ -96,6 +99,10 @@ Route::get('/cyb-major-Stat-minor', function () {
 });
 
 //Controller Routes
-Route::post('post-login', [LoginController::class, 'postLogin'])->name('post-login');
-Route::post('post-registration', [LoginController::class, 'postregistration'])->name('post-registration');
+Route::post('post-login', 'App\Http\Controllers\Auth\LoginController@postLogin');
+Route::post('post-registration', [LoginController::class, 'postRegister']);
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::Post('post-degree', [ClassesController::class, 'degreeClasses']);
+
+Route::Post('post-skills', [SkillsController::class, 'updateSkills']);
